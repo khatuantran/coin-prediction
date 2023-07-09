@@ -11,6 +11,8 @@ import numpy as np
 app = dash.Dash()
 server = app.server
 
+import tensorflow as tf
+print(tf.__version__)
 PATH = pathlib.Path(__file__).parent
 df_btc = pd.read_csv(PATH.joinpath("./Dataset/btc.csv").resolve())
 df_eth = pd.read_csv(PATH.joinpath("./Dataset/eth.csv").resolve())

@@ -136,30 +136,38 @@ for i in range(60,inputs_ada.shape[0]):
 X_test_ada=np.array(X_test_ada)
 X_test_ada=np.reshape(X_test_ada,(X_test_ada.shape[0],X_test_ada.shape[1],1))
 
-closing_price_btc=model_btc.predict(X_test_btc)
-closing_price_btc=scaler1.inverse_transform(closing_price_btc)
+# closing_price_btc=model_btc.predict(X_test_btc)
+# closing_price_btc=scaler1.inverse_transform(closing_price_btc)
 
-closing_price_eth=model_eth.predict(X_test_eth)
-closing_price_eth=scaler2.inverse_transform(closing_price_eth)
+# closing_price_eth=model_eth.predict(X_test_eth)
+# closing_price_eth=scaler2.inverse_transform(closing_price_eth)
 
-closing_price_ada=model_ada.predict(X_test_ada)
-closing_price_ada=scaler3.inverse_transform(closing_price_ada)
+# closing_price_ada=model_ada.predict(X_test_ada)
+# closing_price_ada=scaler3.inverse_transform(closing_price_ada)
 
 train_btc=new_data_btc[:n_btc]
 valid_btc=new_data_btc[n_btc:]
-valid_btc['Predictions']=closing_price_btc
+# valid_btc['Predictions']=closing_price_btc
 
 train_eth=new_data_eth[:n_eth]
 valid_eth=new_data_eth[n_eth:]
-valid_eth['Predictions']=closing_price_eth
+# valid_eth['Predictions']=closing_price_eth
 
 train_ada=new_data_ada[:n_ada]
 valid_ada=new_data_ada[n_ada:]
-valid_ada['Predictions']=closing_price_ada
+# valid_ada['Predictions']=closing_price_ada
+
+# valid_btc.to_csv(PATH.joinpath("./Prediction/valid_btc.csv").resolve())
+# valid_eth.to_csv(PATH.joinpath("./Prediction/valid_eth.csv").resolve())
+# valid_ada.to_csv(PATH.joinpath("./Prediction/valid_ada.csv").resolve())
 
 df_btc= pd.read_csv(PATH.joinpath("./Dataset/btc.csv").resolve())
 df_eth= pd.read_csv(PATH.joinpath("./Dataset/eth.csv").resolve())
 df_ada= pd.read_csv(PATH.joinpath("./Dataset/ada.csv").resolve())
+
+valid_btc = pd.read_csv(PATH.joinpath("./Prediction/valid_btc.csv").resolve())
+valid_eth = pd.read_csv(PATH.joinpath("./Prediction/valid_eth.csv").resolve())
+valid_ada = pd.read_csv(PATH.joinpath("./Prediction/valid_ada.csv").resolve())
 
 df_btc["Date"]=pd.to_datetime(df_btc.Date,format="mixed")
 df_eth["Date"]=pd.to_datetime(df_eth.Date,format="mixed")

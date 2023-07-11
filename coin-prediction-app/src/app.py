@@ -100,9 +100,9 @@ x_train_eth=np.reshape(x_train_eth,(x_train_eth.shape[0],x_train_eth.shape[1],1)
 x_train_ada,y_train_ada=np.array(x_train_ada),np.array(y_train_ada)
 x_train_ada=np.reshape(x_train_ada,(x_train_ada.shape[0],x_train_ada.shape[1],1))
 
-model_btc=load_model(PATH.joinpath("./Model/btc_model.keras").resolve())
-model_eth=load_model(PATH.joinpath("./Model/eth_model.keras").resolve())
-model_ada=load_model(PATH.joinpath("./Model/ada_model.keras").resolve())
+# model_btc=load_model(PATH.joinpath("./Model/btc_model.keras").resolve())
+# model_eth=load_model(PATH.joinpath("./Model/eth_model.keras").resolve())
+# model_ada=load_model(PATH.joinpath("./Model/ada_model.keras").resolve())
 
 inputs_btc=new_data_btc[len(new_data_btc)-len(valid_btc)-60:].values
 inputs_btc=inputs_btc.reshape(-1,1)

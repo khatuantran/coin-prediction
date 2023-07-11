@@ -4,15 +4,15 @@ import pathlib
 import pandas as pd
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
-from keras.models import load_model
+# from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
 app = dash.Dash()
 server = app.server
 
-import tensorflow as tf
-print(tf.__version__)
+# import tensorflow as tf
+# print(tf.__version__)
 PATH = pathlib.Path(__file__).parent
 df_btc = pd.read_csv(PATH.joinpath("./Dataset/btc.csv").resolve())
 df_eth = pd.read_csv(PATH.joinpath("./Dataset/eth.csv").resolve())

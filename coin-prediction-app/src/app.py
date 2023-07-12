@@ -8,7 +8,7 @@ from dash.dependencies import Input, Output
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
-app = dash.Dash()
+app = dash.Dash(__name__)
 server = app.server
 
 # import tensorflow as tf

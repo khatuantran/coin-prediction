@@ -8,8 +8,7 @@ from dash.dependencies import Input, Output
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
-app = dash.Dash(__name__)
-server = app.server
+
 
 # import tensorflow as tf
 # print(tf.__version__)
@@ -176,6 +175,9 @@ df_ada["Date"]=pd.to_datetime(df_ada.Date,format="mixed")
 df_btc.sort_values(by=['Date'])
 df_eth.sort_values(by=['Date'])
 df_ada.sort_values(by=['Date'])
+
+app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
    

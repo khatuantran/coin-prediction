@@ -211,7 +211,7 @@ app.layout = html.Div([
                     figure={
                         "data":[
                             go.Scatter(
-                                x=valid_btc.index,
+                                x=valid_btc["Date"],
                                 y=valid_btc["Predictions"],
                                 mode='markers'
                             )

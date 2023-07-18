@@ -249,7 +249,7 @@ app.layout = html.Div([
                     figure={
                         "data":[
                             go.Scatter(
-                                x=valid_eth.index,
+                                x=valid_eth["Date"],
                                 y=valid_eth["Predictions"],
                                 mode='markers'
                             )
@@ -287,7 +287,7 @@ app.layout = html.Div([
                     figure={
                         "data":[
                             go.Scatter(
-                                x=valid_ada.index,
+                                x=valid_ada["Date"],
                                 y=valid_ada["Predictions"],
                                 mode='markers'
                             )

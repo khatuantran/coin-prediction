@@ -13,9 +13,9 @@ import numpy as np
 # import tensorflow as tf
 # print(tf.__version__)
 PATH = pathlib.Path(__file__).parent
-df_btc = pd.read_csv(PATH.joinpath("./Dataset/btc.csv").resolve())
-df_eth = pd.read_csv(PATH.joinpath("./Dataset/eth.csv").resolve())
-df_ada = pd.read_csv(PATH.joinpath("./Dataset/ada.csv").resolve())
+df_btc = pd.read_csv(PATH.joinpath("./src/Dataset/btc.csv").resolve())
+df_eth = pd.read_csv(PATH.joinpath("./src/Dataset/eth.csv").resolve())
+df_ada = pd.read_csv(PATH.joinpath("./src/Dataset/ada.csv").resolve())
 
 df_btc["Date"]=pd.to_datetime(df_btc.Date,format="mixed")
 df_eth["Date"]=pd.to_datetime(df_eth.Date,format="mixed")
@@ -160,13 +160,13 @@ valid_ada=new_data_ada[n_ada:]
 # valid_eth.to_csv(PATH.joinpath("./Prediction/valid_eth.csv").resolve())
 # valid_ada.to_csv(PATH.joinpath("./Prediction/valid_ada.csv").resolve())
 
-df_btc= pd.read_csv(PATH.joinpath("./Dataset/btc.csv").resolve())
-df_eth= pd.read_csv(PATH.joinpath("./Dataset/eth.csv").resolve())
-df_ada= pd.read_csv(PATH.joinpath("./Dataset/ada.csv").resolve())
+df_btc= pd.read_csv(PATH.joinpath("./src/Dataset/btc.csv").resolve())
+df_eth= pd.read_csv(PATH.joinpath("./src/Dataset/eth.csv").resolve())
+df_ada= pd.read_csv(PATH.joinpath("./src/Dataset/ada.csv").resolve())
 
-valid_btc = pd.read_csv(PATH.joinpath("./Prediction/valid_btc.csv").resolve())
-valid_eth = pd.read_csv(PATH.joinpath("./Prediction/valid_eth.csv").resolve())
-valid_ada = pd.read_csv(PATH.joinpath("./Prediction/valid_ada.csv").resolve())
+valid_btc = pd.read_csv(PATH.joinpath("./src/Prediction/valid_btc.csv").resolve())
+valid_eth = pd.read_csv(PATH.joinpath("./src/Prediction/valid_eth.csv").resolve())
+valid_ada = pd.read_csv(PATH.joinpath("./src/Prediction/valid_ada.csv").resolve())
 
 df_btc["Date"]=pd.to_datetime(df_btc.Date,format="mixed")
 df_eth["Date"]=pd.to_datetime(df_eth.Date,format="mixed")
